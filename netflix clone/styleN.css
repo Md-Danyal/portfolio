@@ -138,6 +138,14 @@ nav button {
   }
 }
 
+@media (max-width:555px){
+  nav span img{
+    left: 50px;
+    top: 15px;
+    clip-path: inset(0 132px 0 0);
+  }
+}
+
 select{
   font-weight: bold;
   padding: 1px;
