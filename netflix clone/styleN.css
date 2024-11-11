@@ -126,8 +126,8 @@ nav button {
 
 @media (max-width:555px){
   .btn{
-    right: 120px;
-    top: 30px;
+    right: 10px;
+    top: 110px;
   }
 }
 
