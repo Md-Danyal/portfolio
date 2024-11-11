@@ -59,7 +59,7 @@ nav button {
   top: 90px;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 4;
   padding: 10px;
   border-radius: 50px;
   border: 1px solid gray;
@@ -79,7 +79,7 @@ nav button {
 
 .hero {
   font-family: "Martel Sans", sans-serif;
-  height: calc(100% - 210px);
+  height: calc(100% - 190px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,6 +122,20 @@ nav button {
   padding: 7px 25px;
   background-color: #000000e2;
   z-index: 10;
+}
+
+@media (max-width:555px){
+  .btn{
+    right: 120px;
+    top: 30px;
+  }
+}
+
+@media (max-width:555px){
+  .btn, .navbar, nav span img{
+    position: absolute;
+    
+  }
 }
 
 select{
@@ -281,6 +295,13 @@ footer {
   max-width: 90vw;
   margin: auto;
   width: 80%;
+}
+
+@media (max-width:600px) {
+  .plans{
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .planh2 {
