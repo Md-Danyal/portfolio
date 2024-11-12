@@ -225,6 +225,12 @@ select{
   width: 80%;
 }
 
+@media (max-width:900px){
+  .trending-now{
+    width: 90%;
+  }
+}
+
 .trending-now h2 {
   margin-bottom: 15px;
   font-size: 24px;
