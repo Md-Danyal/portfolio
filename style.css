@@ -1,119 +1,156 @@
 /* Reset & Fonts */
-* { 
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box; 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root{
+:root {
   --primary-color: #f5f5f5;
   --secondary-color: #121212;
   --third-color: #1a1a1a;
 }
 
-.light{
+.light {
   --primary-color: #121212;
   --secondary-color: #f5f5f5;
   --third-color: #e1e1e1;
 }
 
-body { 
-  font-family: 'Poppins', sans-serif; 
-  color: var(--primary-color); 
-  background: var(--secondary-color); 
-  overflow-x: hidden; 
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--primary-color);
+  background: var(--secondary-color);
+  overflow-x: hidden;
 }
 
 /* Layout */
 header {
-  position: fixed; 
-  top: 0; 
-  width: 100%; 
-  padding: 1rem 2rem; 
-  background: transparent; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; z-index: 100; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
 
-header nav a { 
-  color: var(--primary-color); 
-  margin: 0 1rem; 
-  text-decoration: none; 
+header nav a {
+  color: var(--primary-color);
+  margin: 0 1rem;
+  text-decoration: none;
   position: relative;
 }
 
-#nav{
+.navbar {
+  display: flex;
+}
+
+/* #nav{
   flex: 1; 
   text-align: right;
+} */
+
+.dropdown_menu .toggle_btn {
+  margin-left: auto;
+  padding: 10px 10px 0px;
 }
 
-header nav a::after { 
-  content: ''; 
-  position: absolute; 
-  bottom: -2px; 
-  left: 0; 
-  width: 100%; 
-  height: 2px; 
-  background: #00aaff; 
-  transform: scaleX(0); 
-  transform-origin: right; 
-  transition: transform 0.3s; 
+/* dropdown */
+.dropdown_menu {
+  display: none;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  background-color: #aa989818;
+  height: 50px;
+  overflow: hidden;
 }
 
-header nav a:hover::after { 
-  transform: scaleX(1); 
-  transform-origin: left; 
+.dropdown_menu #icons{
+  display: flex;
+  justify-content: space-evenly;
 }
 
-#icon{
-  width: 1.5rem;
+.dropdown_menu.open{
+  height: 220px;
+}
+
+header nav a::after{
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00aaff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+header nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.icon , .icon1{
+  width: 1.3rem;
   cursor: pointer;
 }
 
-section { 
-  padding: 100px 2rem; 
-  min-height: 100vh; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
+section {
+  padding: 100px 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Sections Styling */
-#about, #projects, #skills, #contact { 
-  text-align: center; 
+#about,
+#projects,
+#skills,
+#contact {
+  text-align: center;
 }
 
-h2 { 
-  font-size: 2.5rem; 
-  margin-bottom: 1rem; 
-  color: #00aaff; 
-  animation: fadeIn 1s ease; 
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #00aaff;
+  animation: fadeIn 1s ease;
 }
 
-p { 
+p {
   cursor: pointer;
-  max-width: 600px; 
+  max-width: 600px;
   line-height: 1.6;
   opacity: 0.9;
-  transition: 1s; 
+  transition: 1s;
   border: 2px solid var(--secondary-color);
 }
 
-#about h2, #about h1, #projects h2, #skills h2, #contact h2{
+#about h2,
+#about h1,
+#projects h2,
+#skills h2,
+#contact h2,
+#icons{
   cursor: pointer;
 }
 
-#about h2{
+#about h2 {
   padding-top: 15px;
 }
 
-#about .social_media{
+#about .social_media {
   position: absolute;
   bottom: 65px;
 }
-#about{
+#about {
   gap: 25px;
 }
 
@@ -126,154 +163,182 @@ p:hover {
 }
 
 /* Animations */
-@keyframes fadeIn { 
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
-  } to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  } 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.section-title { 
-  animation: fadeIn 1s ease-in-out; 
+.section-title {
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* Projects */
-.project-grid { 
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 2rem; 
-  justify-content: center; 
-  margin-top: 2rem; 
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-.project-card { 
-  background: var(--third-color); 
-  padding: 1.5rem; 
-  border-radius: 8px; 
-  width: 300px; 
-  transition: transform 0.3s, box-shadow 0.3s; 
-  position: relative; 
-  overflow: hidden; 
+.project-card {
+  background: var(--third-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
-.project-card a{
+.project-card a {
   text-decoration: none;
 }
 
-.project-card:hover { 
-  transform: scale(1.05); 
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.5); 
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
 }
 
-.project-card h3 { color: #00aaff;
-  margin-bottom: 1rem; 
+.project-card h3 {
+  color: #00aaff;
+  margin-bottom: 1rem;
 }
 
-.project-card p { 
-  font-size: 0.9rem; 
+.project-card p {
+  font-size: 0.9rem;
   color: var(--primary-color);
 }
 
 /* Skills */
 .skills-list {
-  display: flex; gap: 1rem; flex-wrap: wrap; 
-  justify-content: center; margin-top: 2rem; 
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-.skill { 
-  background: var(--third-color); padding: 1rem 1.5rem; 
-  border-radius: 5px; color: #00aaff; 
-  transition: background 0.3s ;
-  cursor: pointer; 
+.skill {
+  background: var(--third-color);
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  color: #00aaff;
+  transition: background 0.3s;
+  cursor: pointer;
 }
 
-.skill:hover { 
-  background:linear-gradient(to right, #5fd2ff, #7bb2fe, #9900ff); 
-  color: var(--secondary-color); 
+.skill:hover {
+  background: linear-gradient(to right, #5fd2ff, #7bb2fe, #9900ff);
+  color: var(--secondary-color);
 }
 
 /* Contact */
-.contact-form { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 1rem; 
-  width: 300px; 
-  margin-top: 2rem; 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  margin-top: 2rem;
 }
 
-.contact-form input, .contact-form textarea { 
-  padding: 0.8rem; 
-  border: 1px solid #444; 
-  border-radius: 4px; 
-  background: var(--third-color); 
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: var(--third-color);
   color: var(--primary-color);
   transition: border-color 0.3s;
 }
-.contact-form input:focus, .contact-form textarea:focus { border-color: #00aaff; }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00aaff;
+}
 
-.contact-form input:hover, .contact-form textarea:hover{
+.contact-form input:hover,
+.contact-form textarea:hover {
   border: 1px solid transparent;
   border-image: linear-gradient(to right, #5fd2ff, #7bb2fe, #5500ff, #9900ff);
   border-image-slice: 1; /* Ensures the gradient fills the entire border */
   padding: 0.8rem; /* Space between border and content */
 }
-.social_media{
+.social_media {
   cursor: pointer;
   border: 2px solid #444;
   padding: 8px;
 }
 
-.social_media:hover{
+.social_media:hover {
   border: 2px solid transparent;
   border-image: linear-gradient(to right, #5fd2ff, #7bb2fe, #5500ff, #9900ff);
   border-image-slice: 1; /* Ensures the gradient fills the entire border */
   padding: 8px; /* Space between border and content */
 }
-.social_media i{
+.social_media i {
   font-size: 25px;
   color: var(--primary-color);
   opacity: 0.5;
   padding: 0 5px;
 }
 
-.social_media i:hover{
+.social_media i:hover {
   color: linear-gradient(to right, #5fd2ff, #7bb2fe, #5500ff, #9900ff);
   transform: scale(1.1);
   color: #0077cc;
 }
 
-
 /* Button */
-.btn { 
-  padding: 0.8rem 1.5rem; 
-  background: #00aaff; 
-  color: var(--secondary-color); 
-  border: none; 
-  border-radius: 5px; 
-  cursor: pointer; 
-  transition: background 0.3s, 
-  transform 0.2s; 
+.btn {
+  padding: 0.8rem 1.5rem;
+  background: #00aaff;
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
 }
 
-.btn:hover { background: #0077cc; transform: translateY(-2px); }
+.btn:hover {
+  background: #0077cc;
+  transform: translateY(-2px);
+}
 
 /* Cursor Trail */
-body::after { 
-  content: ''; position: fixed; width: 10px; height: 10px; border-radius: 50%; 
-  background: #00aaff; pointer-events: none; mix-blend-mode: difference; animation: moveCursor 0.1s infinite; 
+body::after {
+  content: "";
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00aaff;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  animation: moveCursor 0.1s infinite;
 }
-@keyframes moveCursor { from { transform: translate(-50%, -50%); } to { transform: translate(50%, 50%); } }
+@keyframes moveCursor {
+  from {
+    transform: translate(-50%, -50%);
+  }
+  to {
+    transform: translate(50%, 50%);
+  }
+}
 
 h1 {
-    transition: 0.6s;
+  transition: 0.6s;
 }
 
 .flip-card {
   perspective: 1000px; /* Adds depth */
-  width: 300px;
+  width: 13rem;
+  display: flex;
   height: 50px;
   border: 2px solid #0077cc;
   border-radius: 10px;
@@ -285,7 +350,6 @@ h1 {
   width: 300px;
   height: 50px;
 }
-
 
 .flip-card-inner {
   position: relative;
@@ -306,7 +370,8 @@ h1 {
   box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -328,27 +393,55 @@ h1 {
   transform: rotateY(180deg); /* Position it flipped initially */
 }
 
-.flip-card .flip-card-inner{
-  animation: rotate 3s ease-in-out ;
+.flip-card .flip-card-inner {
+  animation: rotate 3s ease-in-out;
 }
 
-@keyframes rotate{
-  0% { 
+@keyframes rotate {
+  0% {
   }
-  100%{
+  100% {
     transform: rotateY(-180deg);
     box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
   }
 }
 
-@media (max-width:555px){
-  .flip-card h1{
+@media (max-width: 555px) {
+  .flip-card h1 {
     font-size: 25px;
   }
 }
 
-@media (max-width:380px){
-  .flip-card h1{
+@media (max-width: 380px) {
+  .flip-card h1 {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 750px) {
+  #nav,
+  .navbar img {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .dropdown_menu .toggle_btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 750px) {
+  .dropdown_menu, .dropdown_menu .nav{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 750px) {
+  header {
+    align-items: start;
   }
 }
