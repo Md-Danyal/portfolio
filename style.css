@@ -131,6 +131,7 @@ p {
   opacity: 0.9;
   transition: 1s;
   border: 2px solid var(--secondary-color);
+  font-weight:bold;
 }
 
 #about h2,
@@ -214,6 +215,14 @@ p {
 .project-card p , .projectCard p{
   font-size: 0.9rem;
   color: var(--primary-color);
+}
+
+.simon {
+  background: linear-gradient(to bottom right, grey, rgb(203, 203, 62), rgb(185, 218, 185));
+}
+
+.netflix {
+  background: linear-gradient(rgb(30, 4, 4), red );
 }
 
 /* Skills */
