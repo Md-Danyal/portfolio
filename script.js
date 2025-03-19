@@ -4,26 +4,24 @@ document.addEventListener("DOMContentLoaded", function () {
     let body = document.body;
 
     function toggleTheme() {
-        console.log("Theme toggled!"); // Debugging log
+        console.log("Theme toggled!");
         body.classList.toggle("light");
         let isLightMode = body.classList.contains("light");
 
-        // New images and text
         let newImgSrc = isLightMode ? "image/moon.png" : "image/sun.png";
         let newText = isLightMode ? "Dark" : "Light";
 
-        // Update #icons (text and image)
         if (iconElement) {
             iconElement.innerHTML = `<img src="${newImgSrc}" class="icon1"> ${newText}`;
         }
 
-        // Update navbar icon image
         if (navbarIcon) {
             navbarIcon.src = newImgSrc;
         }
     }
 
-    // Event listeners for both buttons
+    drawStars();
+
     if (iconElement) {
         iconElement.addEventListener("click", toggleTheme);
     }
@@ -32,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
         navbarIcon.addEventListener("click", toggleTheme);
     }
 });
+
+// next script
 
 const toggleBtn = document.querySelector('.toggle_btn');
 const toggleBtnIcon = document.querySelector('.toggle_btn i');
@@ -86,3 +86,58 @@ function getRandomColor() {
     let color = `rgb(${red},${green},${blue})`;
     return color;
 };
+
+// Space Background
+
+const canvas = document.getElementById("effect");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.documentElement.scrollHeight;
+}
+
+resizeCanvas(); // Set initial size
+
+const stars = [];
+
+function initStars() {
+    stars.length = 0; // Clear stars on resize
+    for (let i = 0; i < 100; i++) {
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 3,
+            speed: Math.random() * 0.5 + 0.2 // Adjusted speed for smooth movement
+        });
+    }
+}
+
+function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    let isLightMode = document.body.classList.contains("light");
+    for (const star of stars) {
+        ctx.beginPath();
+        ctx.fillStyle = isLightMode ? "#000000" : "#ffffff";
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.closePath();
+
+        star.x += star.speed;
+
+        if (star.x > canvas.width) {
+            star.x = 0;
+        }
+    }
+
+    requestAnimationFrame(drawStars);
+}
+
+initStars();
+drawStars();
+
+window.addEventListener("resize", () => {
+    resizeCanvas();
+    initStars();
+});
