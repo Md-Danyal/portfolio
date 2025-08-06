@@ -12,6 +12,11 @@
   --head-text: #00aaff;
   --simon-main: #00272b;
   --simon-text:#e0ff4f;
+  --pathshala-bg: #0d1117;
+  --pathshala-text: #ffffff;
+  --pathshala-a: #90caf9;
+  --pathshala-hover: #1565c0;
+  --pathshala-surface: #1e1e1e;
 }
 
 .light {
@@ -22,6 +27,11 @@
   --head-text: #1E3A5F;
   --simon-main: #e0ff4f;
   --simon-text: #00272b;
+  --pathshala-bg: #f4f9fc;
+  --pathshala-text: #1e1e1e;
+  --pathshala-a: #1e88e5;
+  --pathshala-hover: #d0e8ff;
+  --pathshala-surface: #ffffff;
 }
 
 body {
@@ -250,6 +260,19 @@ p {
 
 .simon h3{
   color: var(--simon-text);
+}
+
+.Pathshala {
+  background-color: var(--pathshala-bg);
+  color: var(--pathshala-text);
+}
+
+.Pathshala .para {
+  color: var(--pathshala-a);
+}
+
+.Pathshala .para:hover {
+  background-color: var(--pathshala-hover);
 }
 
 .netflix {
